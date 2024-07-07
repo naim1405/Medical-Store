@@ -18,7 +18,7 @@ export default function Cart_Item(props) {
 		<div className="my-4">
 			<div className="label-text my-2">{props.data.name}</div>
 			<div className="flex gap-10 place-content-between">
-				<div className="labelh">
+				<div className="label">
 					<button
 						className="btn btn-circle btn-sm btn-neutral"
 						onClick={() => {
@@ -32,24 +32,11 @@ export default function Cart_Item(props) {
 					>
 						-
 					</button>
-					<input
-						type="number"
-						placeholder="Type here"
-						className="input input-bordered w-1/2 mx-4"
-						value={item_quantity}
-						min="0"
-						onChange={(e) => {
-							props.set_cart_total(
-								props.cart_total -
-									item_quantity * props.data.price
-							);
-							set_item_quantity(parseInt(e.target.value));
-							props.set_cart_total(
-								props.cart_total +
-									item_quantity * props.data.price
-							);
-						}}
-					/>
+
+					<div className="input input-md input-bordered w-full min-w-32 mx-4 flex items-center place-content-between">
+						<div>{item_quantity}</div>
+						<div>unit</div>
+					</div>
 
 					<button
 						className="btn btn-circle btn-sm btn-neutral"
