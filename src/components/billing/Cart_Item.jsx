@@ -59,7 +59,19 @@ export default function Cart_Item(props) {
 					<p>{item_quantity * props.data.price}</p>
 				</div>
 				<div>
-					<button className="btn btn-outline">Delete</button>
+					<button
+						className="btn btn-outline"
+						onClick={() => {
+							props.set_cart_total(
+								props.cart_total -
+									props.data.price * item_quantity
+							);
+
+							props.handle_delete(props.data.name);
+						}}
+					>
+						Delete
+					</button>
 				</div>
 			</div>
 		</div>

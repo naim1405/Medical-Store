@@ -76,6 +76,13 @@ export default function Create_Billing() {
 		]);
 	}
 
+	function handle_delete(product) {
+		const updated_cart_list = cart_data.filter(
+			(item) => item.name !== product
+		);
+		set_cart_data(updated_cart_list);
+	}
+
 	return (
 		<>
 			<div className="grid grid-cols-4 gap-10 bg-white p-4 rounded-lg">
@@ -182,6 +189,7 @@ export default function Create_Billing() {
 							cart_total={cart_total}
 							cart_data={cart_data}
 							set_cart_data={set_cart_data}
+							handle_delete={handle_delete}
 						></Cart_Item>
 					))}
 				</div>
