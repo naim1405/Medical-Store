@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Cart_Item from "./Cart_Item";
+import Cart_Summary from "./Cart_Summary";
 
 export default function Create_Billing() {
 	const [all_items, set_all_items] = useState([]);
@@ -73,8 +74,6 @@ export default function Create_Billing() {
 				quantity: 0,
 			},
 		]);
-
-		console.log(cart_data);
 	}
 
 	return (
@@ -167,13 +166,14 @@ export default function Create_Billing() {
 							value={form_data.discount}
 							onChange={handleChange}
 							name="discount"
+							min="0"
 						/>
 					</label>
 				</div>
 			</div>
 
-			<div className="mt-8 grid grid-cols-6 gap-10">
-				<div className="col-span-4 bg-white p-4 rounded-lg">
+			<div className="mt-8 grid grid-cols-6 gap-10 ">
+				<div className="col-span-4 bg-white p-4 rounded-lg h-min">
 					{cart_data.map((item, idx) => (
 						<Cart_Item
 							key={idx}
@@ -185,9 +185,13 @@ export default function Create_Billing() {
 						></Cart_Item>
 					))}
 				</div>
-				<div className="col-span-2 bg-white p-4 rounded-lg">
-					cart
-					<div>Total: {cart_total}</div>
+				<div className="col-span-2 bg-white p-4 rounded-lg h-fit grid-none">
+					<Cart_Summary
+						cart_total={cart_total}
+						discount={
+							isNaN(form_data.discount) ? 0 : form_data.discount
+						}
+					></Cart_Summary>
 				</div>
 			</div>
 		</>
