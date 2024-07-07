@@ -45,8 +45,8 @@ export default function Cart_Item(props) {
 							);
 							set_item_quantity(parseInt(e.target.value));
 							props.set_cart_total(
-								(prev) =>
-									prev + item_quantity * props.data.price
+								props.cart_total +
+									item_quantity * props.data.price
 							);
 						}}
 					/>
