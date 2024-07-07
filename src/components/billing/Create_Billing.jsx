@@ -186,7 +186,7 @@ export default function Create_Billing() {
 				</div>
 			</div>
 
-			<div className="mt-8 grid grid-cols-6 gap-10 ">
+			<div className="mt-8 grid grid-cols-6 gap-10">
 				<div className="col-span-4 bg-white p-4 rounded-lg h-min">
 					{cart_data.map((item, idx) => (
 						<Cart_Item

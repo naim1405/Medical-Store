@@ -91,10 +91,8 @@ export default function Cart_Summary(props) {
 					{/* Open the modal using document.getElementById('ID').showModal() method */}
 					<dialog id="my_modal_2" className="modal">
 						<div className="modal-box">
-							<h3 className="font-bold text-lg">Hello!</h3>
-							<p className="py-4">
-								Press ESC key or click outside to close
-							</p>
+							<h3 className="font-bold text-lg">Hi!</h3>
+							<p className="py-4">TO BE IMPLEMENTED</p>
 						</div>
 						<form method="dialog" className="modal-backdrop">
 							<button>close</button>
