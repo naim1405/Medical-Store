@@ -38,10 +38,17 @@ export default function Create_Billing() {
 				phone: e.target.value,
 			});
 		} else if (e.target.name === "discount") {
-			set_form_data({
-				...form_data,
-				discount: parseFloat(e.target.value),
-			});
+			if (e.target.value === "") {
+				set_form_data({
+					...form_data,
+					discount: 0,
+				});
+			} else {
+				set_form_data({
+					...form_data,
+					discount: parseFloat(e.target.value),
+				});
+			}
 		}
 	}
 
