@@ -6,7 +6,7 @@ export default function Cart_Summary(props) {
 	const total_discount = (cart_total * parseFloat(discount)) / 100;
 
 	const total_tax = (cart_total * 5) / 100;
-	const total_bill = cart_total + total_tax - total_discount;
+	const total_bill = Math.ceil(cart_total + total_tax - total_discount);
 	const [user_payment, set_user_payment] = useState("");
 
 	const cart_summary = (
@@ -66,16 +66,16 @@ export default function Cart_Summary(props) {
 						type="number"
 						min="0"
 						value={user_payment}
-						onChange={(e) =>
-							set_user_payment(parseFloat(e.target.value))
-						}
+						onChange={(e) => set_user_payment(e.target.value)}
 					/>
 					<div className="join-item ml-8">Paid Amount</div>
 				</div>
 				<div className="my-4 text-[#004FE8] font-bold">
 					<p>Amount Return</p>
 					<h1 className="text-3xl">
-						{isNaN(user_payment) ? 0 : user_payment - total_bill}
+						{user_payment === ""
+							? 0
+							: parseFloat(user_payment) - total_bill}
 					</h1>
 				</div>
 				<div className="flex justify-stretch py-4">
