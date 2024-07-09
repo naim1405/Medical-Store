@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { FaMinus, FaPlus } from "react-icons/fa";
+import { GoTrash } from "react-icons/go";
 
 export default function Cart_Item(props) {
 	const [item_quantity, set_item_quantity] = useState(
@@ -20,7 +22,7 @@ export default function Cart_Item(props) {
 			<div className="flex gap-10 place-content-between">
 				<div className="label">
 					<button
-						className="btn btn-circle btn-sm btn-neutral"
+						className="bg-[#004FE8] rounded-full p-2"
 						onClick={() => {
 							if (item_quantity > 0) {
 								set_item_quantity(parseInt(item_quantity) - 1);
@@ -30,7 +32,7 @@ export default function Cart_Item(props) {
 							}
 						}}
 					>
-						-
+						<FaMinus size="1em" color="white"></FaMinus>
 					</button>
 
 					<div className="input input-md input-bordered w-full min-w-32 mx-4 flex items-center place-content-between">
@@ -39,7 +41,7 @@ export default function Cart_Item(props) {
 					</div>
 
 					<button
-						className="btn btn-circle btn-sm btn-neutral"
+						className="bg-[#004FE8] rounded-full p-2"
 						onClick={() => {
 							set_item_quantity(parseInt(item_quantity) + 1);
 							props.set_cart_total(
@@ -47,7 +49,7 @@ export default function Cart_Item(props) {
 							);
 						}}
 					>
-						+
+						<FaPlus size="1em" color="white"></FaPlus>
 					</button>
 				</div>
 				<div>
@@ -60,7 +62,7 @@ export default function Cart_Item(props) {
 				</div>
 				<div>
 					<button
-						className="btn btn-outline"
+						className="btn btn-ghost mx-2"
 						onClick={() => {
 							props.set_cart_total(
 								props.cart_total -
@@ -70,7 +72,7 @@ export default function Cart_Item(props) {
 							props.handle_delete(props.data.name);
 						}}
 					>
-						Delete
+						<GoTrash size="2em"></GoTrash>
 					</button>
 				</div>
 			</div>

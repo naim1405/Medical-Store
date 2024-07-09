@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { GoTrash } from "react-icons/go";
 
 export default function List_Item(props) {
 	const [price, set_price] = useState(props.price);
@@ -28,10 +29,10 @@ export default function List_Item(props) {
 				</div>
 				<div className="w-1/6">
 					<button
-						className="btn"
+						className="btn btn-ghost"
 						onClick={() => props.handle_delete(props.name)}
 					>
-						delete
+						<GoTrash size="1.5em"></GoTrash>
 					</button>
 				</div>
 			</div>

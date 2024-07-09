@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { MdArrowBack } from "react-icons/md";
 
 export default function Cart_Summary(props) {
 	const [summary_state, set_summary_state] = useState(true);
@@ -45,14 +46,14 @@ export default function Cart_Summary(props) {
 	);
 	const receive_money = (
 		<>
-			<div>
+			<div className="flex self-center">
 				<button
-					className="btn btn-outline btn-accent mx-4"
+					className="btn btn-ghost rounded-full mx-4 border-1 border-black"
 					onClick={() => set_summary_state(true)}
 				>
-					Back
+					<MdArrowBack size="1.5em"></MdArrowBack>
 				</button>
-				<span className="text-xl text-bolder">Receive Money</span>
+				<div className="text-xl text-bolder mt-2">Receive Money</div>
 			</div>
 			<div className="flex place-content-between p-4">
 				<div>Total Bill</div>

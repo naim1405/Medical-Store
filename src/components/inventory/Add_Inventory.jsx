@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import List_Item from "./List_Item";
+import { SlMagnifierAdd } from "react-icons/sl";
 
 export default function Add_Invetory() {
 	const [item_list, set_item_list] = useState([]);
@@ -57,9 +58,10 @@ export default function Add_Invetory() {
 	}
 
 	const search_div = (
-		<>
+		<div className="shadow-lg shadow-gray-300 p-4 h-80 overflow-y-scroll">
 			{filtered_list.map((item) => (
 				<div
+					className="my-2"
 					key={item.id}
 					onClick={() =>
 						handle_add_to_list({ name: item.name, id: item.id })
@@ -68,10 +70,10 @@ export default function Add_Invetory() {
 					{item.name}
 				</div>
 			))}
-		</>
+		</div>
 	);
 	const selected_div = (
-		<>
+		<div className="h-80">
 			{added_items.map((item) => {
 				return (
 					<List_Item
@@ -84,7 +86,7 @@ export default function Add_Invetory() {
 					></List_Item>
 				);
 			})}
-		</>
+		</div>
 	);
 
 	return (
@@ -98,7 +100,7 @@ export default function Add_Invetory() {
 				Add New Items
 			</button>
 			<dialog id="my_modal_3" className="modal">
-				<div className="modal-box">
+				<div className="modal-box  h-128">
 					{/* modal control */}
 					<form method="dialog">
 						<button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
@@ -107,10 +109,13 @@ export default function Add_Invetory() {
 					</form>
 					{/* modal content */}
 					<h3 className="font-bold text-lg">Add New Items</h3>
-					<div>
+					<div className="join  no-outline bg-[#DDDDDD] my-4 p-4 w-full">
+						<div className="join-item pr-4">
+							<SlMagnifierAdd size="2em"></SlMagnifierAdd>
+						</div>
 						<input
 							type="text"
-							className="input input-bordered w-full my-4 bg-gray-300"
+							className="w-full no-outline bg-[#DDDDDD]"
 							placeholder="Search and Add"
 							value={search_word}
 							onChange={(e) => set_search_word(e.target.value)}

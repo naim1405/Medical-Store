@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Cart_Item from "./Cart_Item";
 import Cart_Summary from "./Cart_Summary";
+import { SlMagnifierAdd } from "react-icons/sl";
 
 export default function Create_Billing() {
 	const [all_items, set_all_items] = useState([]);
@@ -101,16 +102,21 @@ export default function Create_Billing() {
 							</span>
 						</div>
 
-						<input
-							type="text"
-							placeholder="Search and add"
-							className="input input-bordered w-full max-w-xs"
-							onClick={() =>
-								document
-									.getElementById("my_modal_3")
-									.showModal()
-							}
-						/>
+						<div className="join  no-outline bg-[#DDDDDD] my-4 p-4 w-full">
+							<div className="join-item pr-4">
+								<SlMagnifierAdd size="2em"></SlMagnifierAdd>
+							</div>
+							<input
+								type="text"
+								className="w-full no-outline bg-[#DDDDDD]"
+								placeholder="Search and Add"
+								onClick={() =>
+									document
+										.getElementById("my_modal_3")
+										.showModal()
+								}
+							/>
+						</div>
 					</label>
 					<dialog id="my_modal_3" className="modal">
 						<div className="modal-box">
@@ -119,25 +125,31 @@ export default function Create_Billing() {
 									✕
 								</button>
 							</form>
-							<label className="form-control w-full max-w-xs">
+							<label className="form-control w-full">
 								<div className="label">
 									<span className="label-text text-lg text-black text-bold">
 										Create Bill
 									</span>
 								</div>
 
-								<input
-									type="text"
-									placeholder="Search and add"
-									className="input input-bordered w-full max-w-xs"
-									value={form_data.current_item}
-									onChange={handleChange}
-									name="item-name"
-								/>
+								<div className="join  no-outline bg-[#DDDDDD] my-4 p-4">
+									<div className="join-item pr-4">
+										<SlMagnifierAdd size="2em"></SlMagnifierAdd>
+									</div>
+									<input
+										type="text"
+										className="w-full no-outline bg-[#DDDDDD]"
+										placeholder="Search and Add"
+										value={form_data.current_item}
+										onChange={handleChange}
+										name="item-name"
+									/>
+								</div>
 							</label>
 							{filtered_items.map((item, index) => {
 								return (
 									<div
+										className="my-2 btn btn-block btn-ghost"
 										key={index}
 										role="button"
 										onClick={handleAddItem}
