@@ -45,7 +45,7 @@ export default function Cart_Item(props) {
 						onClick={() => {
 							set_item_quantity(parseInt(item_quantity) + 1);
 							props.set_cart_total(
-								props.cart_total + props.data.price
+								(prev) => prev + props.data.price
 							);
 						}}
 					>
@@ -65,8 +65,8 @@ export default function Cart_Item(props) {
 						className="btn btn-ghost mx-2"
 						onClick={() => {
 							props.set_cart_total(
-								props.cart_total -
-									props.data.price * item_quantity
+								(prev) =>
+									prev - props.data.price * item_quantity
 							);
 
 							props.handle_delete(props.data.name);
