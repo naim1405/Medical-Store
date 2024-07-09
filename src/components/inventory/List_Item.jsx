@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 
 export default function List_Item(props) {
-	// console.log("props");
-	// console.log(props);
 	const [price, set_price] = useState(props.price);
 	const [unit, set_unit] = useState(props.unit);
 	useEffect(() => {
@@ -10,14 +8,12 @@ export default function List_Item(props) {
 	}, [price, unit]);
 	return (
 		<div className="my-4">
-			{/* {console.log(props.name + " " + unit + " " + price)} */}
 			<div>{props.name}</div>
 			<div className="flex my-2">
 				<div className="w-5/6 flex">
 					<input
 						className="input input-bordered w-3/6"
-						typ
-						e="number"
+						type="number"
 						value={unit}
 						onChange={(e) => set_unit(e.target.value)}
 						placeholder="Unit"
@@ -32,7 +28,7 @@ export default function List_Item(props) {
 				</div>
 				<div className="w-1/6">
 					<button
-						className="btn "
+						className="btn"
 						onClick={() => props.handle_delete(props.name)}
 					>
 						delete

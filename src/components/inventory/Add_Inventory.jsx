@@ -10,7 +10,7 @@ export default function Add_Invetory() {
 	useEffect(() => {
 		fetch("all_products.json")
 			.then((res) => res.json())
-			.then((data) => set_item_list(data.names));
+			.then((data) => set_item_list(data));
 	}, []);
 
 	useEffect(() => {
@@ -20,24 +20,24 @@ export default function Add_Invetory() {
 			set_is_searching(true);
 		}
 		set_filtered_list(
-			item_list.filter((item) => item.includes(search_word))
+			item_list.filter((item) => item.name.includes(search_word))
 		);
 	}, [search_word]);
 
 	function handle_add_to_list(item) {
 		set_search_word("");
 		for (let i = 0; i < added_items.length; i++) {
-			if (added_items[i].name === item) {
+			if (added_items[i].name === item.name) {
 				return;
 			}
 		}
-		set_added_items([...added_items, { name: item, unit: "", price: "" }]);
+		set_added_items([
+			...added_items,
+			{ id: item.id, name: item.name, unit: "", price: "" },
+		]);
 	}
 
 	function handle_edit(item, quantity, price) {
-		// console.log("editing");
-		// console.log(item + " " + quantity + " " + price);
-
 		const temp_list = added_items;
 		for (let i = 0; i < temp_list.length; i++) {
 			if (temp_list[i].name === item) {
@@ -50,32 +50,32 @@ export default function Add_Invetory() {
 	}
 
 	function handle_delete(item_name) {
-		// console.log(item_name);
 		const update_list = added_items.filter(
 			(item) => item.name !== item_name
 		);
-		// console.log(update_list);
 		set_added_items(update_list);
 	}
 
 	const search_div = (
 		<>
-			{filtered_list.map((item, index) => (
-				<div key={index} onClick={() => handle_add_to_list(item)}>
-					{item}
+			{filtered_list.map((item) => (
+				<div
+					key={item.id}
+					onClick={() =>
+						handle_add_to_list({ name: item.name, id: item.id })
+					}
+				>
+					{item.name}
 				</div>
 			))}
 		</>
 	);
 	const selected_div = (
 		<>
-			{/* {console.log("rerender")} */}
-			{added_items.map((item, index) => {
-				// console.log(item.name + " " + item.unit + " " + item.price);
-
+			{added_items.map((item) => {
 				return (
 					<List_Item
-						key={index}
+						key={item.id}
 						name={item.name}
 						price={item.price}
 						unit={item.unit}
@@ -101,7 +101,6 @@ export default function Add_Invetory() {
 				<div className="modal-box">
 					{/* modal control */}
 					<form method="dialog">
-						{/* if there is a button in form, it will close the modal */}
 						<button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
 							✕
 						</button>
