@@ -14,7 +14,7 @@ export default function Create_Billing() {
 			.then((data) => set_product_info(data));
 	}, []);
 	useEffect(() => {
-		fetch("all_products.json")
+		fetch("all_products_2.json")
 			.then((res) => res.json())
 			.then((data) => {
 				set_all_items(data.names);
