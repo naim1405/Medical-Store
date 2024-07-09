@@ -14,7 +14,7 @@ function App() {
 		<div className="grid grid-cols-6 px-8 py-4 ">
 			{/* nav */}
 			<div className="h-svh mt-4">
-				<h1 className="font-bold text-2xl">
+				<h1 className="font-bold text-2xl ml-8">
 					<NavLink to="/">Medical store</NavLink>
 				</h1>
 
@@ -74,8 +74,8 @@ function App() {
 								/>
 								<div className="join-item pl-4">
 									<div className="bg-white rounded rounded-md px-2">
-										<span className="text-2xl">⌘</span>
-										<span className="text-2xl"> F</span>
+										<span className="text-xl">⌘</span>
+										<span className="text-xl"> F </span>
 									</div>
 								</div>
 							</div>

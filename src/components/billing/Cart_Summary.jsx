@@ -52,7 +52,7 @@ export default function Cart_Summary(props) {
 		<>
 			<div className="flex self-center">
 				<button
-					className="btn btn-ghost rounded-full mx-4 border-1 border-black"
+					className="btn btn-ghost rounded-full mr-4 border-1 border-black"
 					onClick={() => set_summary_state(true)}
 				>
 					<MdArrowBack size="1.5em"></MdArrowBack>

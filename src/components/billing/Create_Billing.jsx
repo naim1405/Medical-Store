@@ -102,9 +102,9 @@ export default function Create_Billing() {
 							</span>
 						</div>
 
-						<div className="join  no-outline bg-[#DDDDDD] my-4 p-4 w-full">
+						<div className="join  no-outline p-4 bg-[#DDDDDD] p-2 w-full">
 							<div className="join-item pr-4">
-								<SlMagnifierAdd size="2em"></SlMagnifierAdd>
+								<SlMagnifierAdd size="1.5em"></SlMagnifierAdd>
 							</div>
 							<input
 								type="text"
