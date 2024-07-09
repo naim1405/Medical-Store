@@ -61,7 +61,7 @@ export default function Add_Invetory() {
 		<div className="shadow-lg shadow-gray-300 p-4 h-80 overflow-y-scroll">
 			{filtered_list.map((item) => (
 				<div
-					className="my-2"
+					className="my-1 btn btn-block btn-ghost"
 					key={item.id}
 					onClick={() =>
 						handle_add_to_list({ name: item.name, id: item.id })
