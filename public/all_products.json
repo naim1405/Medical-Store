@@ -1,32 +1,91 @@
-{"names":[
-"isosorbide mononitrate",
-"Dermatop",
-"Stress Relief",
-"Lamotrigine",
-"Lovenox",
-"Pantoprazole Sodium",
-"Topamax",
-"Synalar",
-"Fluconazole",
-"Prime of Life",
-"END-ZIT",
-"Isoniazid",
-"Doxycycline",
-"Advil",
-"Erythromycin",
-"Nicotine Polacrilex",
-"Mi Acid",
-"Appetyl",
-"Hemorrhoid Symptom Formula",
-"Levofloxacin",
-"Mepivacaine",
-"MYALEPT",
-"Bermuda Grass Smut",
-"Gerbil Epithelium",
-"Telmisartan",
-"Neuro-Chord",
-"Marsh Elder Mixture",
-"Hand Sanitizer",
-"Lamotrigine",
-"Ampicillin"]
-}
+[{
+  "id": 1,
+  "name": "Hepsera"
+}, {
+  "id": 2,
+  "name": "Captopril"
+}, {
+  "id": 3,
+  "name": "Naproxen Sodium"
+}, {
+  "id": 4,
+  "name": "Glimepiride"
+}, {
+  "id": 5,
+  "name": "Cefuroxime"
+}, {
+  "id": 6,
+  "name": "ZOSTRIX HP"
+}, {
+  "id": 7,
+  "name": "Cyclobenzaprine Hydrochloride"
+}, {
+  "id": 8,
+  "name": "CounterAct"
+}, {
+  "id": 9,
+  "name": "Nicotiana e fol. 6"
+}, {
+  "id": 10,
+  "name": "Ezetimibe"
+}, {
+  "id": 11,
+  "name": "Melancholic"
+}, {
+  "id": 12,
+  "name": "Denorex Therapeutic"
+}, {
+  "id": 13,
+  "name": "Axe"
+}, {
+  "id": 14,
+  "name": "Oxygen"
+}, {
+  "id": 15,
+  "name": "Buprenorphine HCl and Naloxone HCl"
+}, {
+  "id": 16,
+  "name": "Haemonetics Anticoagulant Sodium Citrate"
+}, {
+  "id": 17,
+  "name": "Locoid"
+}, {
+  "id": 18,
+  "name": "SparkleFresh"
+}, {
+  "id": 19,
+  "name": "MD-GASTROVIEW"
+}, {
+  "id": 20,
+  "name": "Banana Boat Ultra Defense"
+}, {
+  "id": 21,
+  "name": "Citalopram Hydrobromide"
+}, {
+  "id": 22,
+  "name": "Antiseptic Hand Gel with Aloe"
+}, {
+  "id": 23,
+  "name": "Torsemide"
+}, {
+  "id": 24,
+  "name": "Rhubarb"
+}, {
+  "id": 25,
+  "name": "ENALAPRIL MALEATE"
+}, {
+  "id": 26,
+  "name": "Androbalance"
+}, {
+  "id": 27,
+  "name": "Fosamax"
+}, {
+  "id": 28,
+  "name": "Aspergillus niger"
+}, {
+  "id": 29,
+  "name": "Ropinirole"
+}, {
+  "id": 30,
+  "name": "Nutmeg"
+}]
