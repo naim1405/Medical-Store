@@ -36,7 +36,11 @@ export default function Cart_Summary(props) {
 			</div>
 			<div className="flex justify-stretch p-4">
 				<button
-					className="btn w-full btn-neutral btn-wide"
+					className={
+						cart_total === 0
+							? "btn w-full btn-neutral btn-wide btn-disabled"
+							: "btn w-full btn-neutral btn-wide"
+					}
 					onClick={() => set_summary_state(false)}
 				>
 					Receive Money

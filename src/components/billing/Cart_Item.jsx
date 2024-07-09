@@ -35,7 +35,13 @@ export default function Cart_Item(props) {
 						<FaMinus size="1em" color="white"></FaMinus>
 					</button>
 
-					<div className="input input-md input-bordered w-full min-w-32 mx-4 flex items-center place-content-between">
+					<div
+						className={
+							item_quantity === 0
+								? "input input-md input-bordered w-full min-w-32 mx-4 flex items-center place-content-between bg-red-500/30"
+								: "input input-md input-bordered w-full min-w-32 mx-4 flex items-center place-content-between"
+						}
+					>
 						<div>{item_quantity}</div>
 						<div>unit</div>
 					</div>
