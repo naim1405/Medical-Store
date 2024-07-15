@@ -31,11 +31,11 @@ export default function Billing() {
 							<input
 								type="text"
 								placeholder="Search bill with phone-number"
-								className="w-64 no-outline bg-[#F4F4F4]"
+								className="w-1/2 lg:w-64 no-outline bg-[#F4F4F4]"
 							/>
 						</div>
 					</div>
-					<div className="flex-none">
+					<div className="block md:flex-none p-1 md:p-4">
 						<button className="btn btn-outline">
 							Export Report
 						</button>
@@ -86,10 +86,12 @@ export default function Billing() {
 							</tbody>
 						</table>
 					</div>
-					<div className="mt-8 flex place-content-center gap-0.5">
+					<div className="mt-8 flex place-content-center">
 						<button className="btn-sm flex content-center pt-1 text-gray-500">
 							<MdArrowBack size="1.5em"></MdArrowBack>
-							<span className="ml-2">Previous</span>
+							<span className="ml-2 hidden sm:block">
+								Previous
+							</span>
 						</button>
 						<button className="btn btn-primary btn-sm">1</button>
 						<button className="btn-sm">2</button>
@@ -97,7 +99,7 @@ export default function Billing() {
 						<button className="btn-sm">99</button>
 						<button className="btn-sm">100</button>
 						<button className="btn-sm flex content-center pt-1.5">
-							<span className="mr-2">Next</span>
+							<span className="mr-2 hidden sm:block">Next</span>
 							<MdArrowForward size="1.5em"></MdArrowForward>
 						</button>
 					</div>

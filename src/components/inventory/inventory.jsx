@@ -21,8 +21,8 @@ export default function Inventory() {
 	}, []);
 	return (
 		<>
-			<div className="flex bg-white p-4 justify-between border rounded-lg">
-				<div className="flex items-center">
+			<div className="md:flex md:items-center bg-white p-4 justify-between border rounded-lg">
+				<div className="flex justify-between lg:justify-normal items-center my-4 lg:my-0">
 					<div className="font-bold text-2xl">Inventory</div>
 					<div className="join  no-outline bg-[#F4F4F4] ml-4 p-2">
 						<div className="join-item pr-4">
@@ -31,13 +31,13 @@ export default function Inventory() {
 						<input
 							type="text"
 							placeholder="Search Product"
-							className="w-64 no-outline bg-[#F4F4F4]"
+							className="w-1/2 lg:w-no-outline bg-[#F4F4F4]"
 						/>
 					</div>
 				</div>
 
 				<div>
-					<button className="btn btn-outline mx-4">
+					<button className="btn btn-outline mr-4">
 						Export Report
 					</button>
 					<Add_Invetory></Add_Invetory>
@@ -83,10 +83,12 @@ export default function Inventory() {
 							</tbody>
 						</table>
 					</div>
-					<div className="mt-8 flex place-content-center gap-0.5">
+					<div className="mt-8 flex place-content-center">
 						<button className="btn-sm flex content-center pt-1 text-gray-500">
 							<MdArrowBack size="1.5em"></MdArrowBack>
-							<span className="ml-2">Previous</span>
+							<span className="ml-2 hidden sm:block">
+								Previous
+							</span>
 						</button>
 						<button className="btn btn-primary btn-sm">1</button>
 						<button className="btn-sm">2</button>
@@ -94,7 +96,7 @@ export default function Inventory() {
 						<button className="btn-sm">99</button>
 						<button className="btn-sm">100</button>
 						<button className="btn-sm flex content-center pt-1.5">
-							<span className="mr-2">Next</span>
+							<span className="mr-2 hidden sm:block">Next</span>
 							<MdArrowForward size="1.5em"></MdArrowForward>
 						</button>
 					</div>

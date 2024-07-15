@@ -93,7 +93,7 @@ export default function Create_Billing() {
 
 	return (
 		<>
-			<div className="grid grid-cols-4 gap-10 bg-white p-4 rounded-lg">
+			<div className="md:grid md:grid-cols-4 gap-10 bg-white p-4 rounded-lg">
 				<div className="col-span-2">
 					<label className="form-control w-full max-w-xs">
 						<div className="label">
@@ -125,7 +125,7 @@ export default function Create_Billing() {
 									✕
 								</button>
 							</form>
-							<label className="form-control w-full">
+							<label className="form-control  w-full">
 								<div className="label">
 									<span className="label-text text-lg text-black text-bold">
 										Create Bill
@@ -198,7 +198,7 @@ export default function Create_Billing() {
 				</div>
 			</div>
 
-			<div className="mt-8 grid grid-cols-6 gap-10">
+			<div className="mt-8 md:grid md:grid-cols-6 md:gap-10">
 				<div className="col-span-4 bg-white p-4 rounded-lg h-min">
 					{cart_data.map((item, idx) => (
 						<Cart_Item
@@ -212,7 +212,7 @@ export default function Create_Billing() {
 						></Cart_Item>
 					))}
 				</div>
-				<div className="col-span-2 bg-white p-4 rounded-lg h-fit grid-none">
+				<div className="col-span-2 bg-white p-4 rounded-lg h-fit grid-none mt-8 md:mt-0">
 					<Cart_Summary
 						cart_total={cart_total}
 						discount={

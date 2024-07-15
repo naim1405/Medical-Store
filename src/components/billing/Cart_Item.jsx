@@ -17,10 +17,10 @@ export default function Cart_Item(props) {
 	}, [item_quantity]);
 
 	return (
-		<div className="my-4">
-			<div className="label-text my-2">{props.data.name}</div>
-			<div className="flex gap-10 place-content-between">
-				<div className="label">
+		<div className="my-8">
+			<div className="label-text my-2 font-bold">{props.data.name}</div>
+			<div className="flex place-content-between flex-wrap">
+				<div className="label basis-full shrink-0 grow-0 lg:shrink-1 lg:basis-0 lg:grow-1">
 					<button
 						className="bg-[#004FE8] rounded-full p-2"
 						onClick={() => {
@@ -58,15 +58,17 @@ export default function Cart_Item(props) {
 						<FaPlus size="1em" color="white"></FaPlus>
 					</button>
 				</div>
-				<div>
+				<div className="">
 					<p>price per unit</p>
-					<p>{props.data.price}</p>
+					<p className="font-bold">{props.data.price}</p>
 				</div>
-				<div>
+				<div className="">
 					<p>total</p>
-					<p>{item_quantity * props.data.price}</p>
+					<p className="font-bold">
+						{item_quantity * props.data.price}
+					</p>
 				</div>
-				<div>
+				<div className="">
 					<button
 						className="btn btn-ghost mx-2"
 						onClick={() => {
